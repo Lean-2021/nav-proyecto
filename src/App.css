@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-brand{  /*margen del logo version desktop*/
+  margin-left: 32px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-link{    /*color links de nav */
+  background-image: linear-gradient(#d47f7f,#d47f7f);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 3px;
+  transition: all .5s !important
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.nav-link:hover{  /*efecto link de nav cursor*/
+  font-weight: bold !important;
+  background-size: 60% 3px;
+}
+/* link activo seccion del nav  */
+.active{
+  font-weight: bold !important;
+  background-size: 60% 3px;
+}
+ /*ocultar redes sociales version desktop*/
+.social-link{ 
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style: none;
+}
+.social-link li{
+  margin-left:20px;
+  display: none;
+}
+/* ocultar linea menu en desktop */
+.menu-line{
+  display: none;
+}
+/* ocultar iconos de items del nav en desktop */
+.nav-icons{
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+/* contenedor de secciones */
+.container-pages{
+  margin-top: 100px;
+  margin-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* resoluciones medianas y pequeñas */
+
+@media screen and (max-width:991px){
+  /*ocultar efectos del nav en dispositovs pequeños*/
+  .nav-link{
+    background-size:0 !important;
   }
-  to {
-    transform: rotate(360deg);
+  .social-link{
+    margin-left:-50px;
+    margin-top: 40px;
+  }
+  /* link activo versiones mobiles */
+  .active{
+    background-size:0;
+  }
+
+  .social-link li{  /*mostrar redes sociales menu dispositivos pequeños*/
+    display: inline-flex;
+    flex-direction: row;
+    vertical-align: middle;
+  }
+  .menu-line{   /*mostrar linea menu*/
+    display: block;
+    margin-top: 20px;
+    border: 2px solid #d47f7f;
+  }
+  .navbar-toggler{  /*boton menu */
+    position:absolute;
+    box-shadow: none !important;
+  }
+  .navbar-brand{
+    margin-left:80px;
+  }
+  .nav-icons{  /*mostrar redes sociales dispositivos pequeños*/
+    display: inline-block;
+    vertical-align: 10%;
+    padding: 10px;
+  }
+  /* botón cerrar menu */
+  .close-menu{
+    position:absolute;
+    right:0;
+    margin-right: 20px;
   }
 }
